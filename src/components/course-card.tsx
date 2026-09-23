@@ -36,13 +36,11 @@ export function CourseCard({
   enrolledAt,
   onCancel,
 }: CourseCardProps) {
-  // ไม่มี enrolledAt = ยังไม่ได้ลงทะเบียนวิชานี้
   const isEnrolled = Boolean(enrolledAt);
 
-  // ข้อ 3: Light = ลงทะเบียนแล้วสีอำพัน / เปิดรับสีม่วง, Dark = สลับกัน
   const badgeClassName = isEnrolled
-    ? "bg-amber-100 text-amber-800 dark:bg-purple-500/20 dark:text-purple-300"
-    : "bg-purple-100 text-purple-700 dark:bg-amber-500/20 dark:text-amber-300";
+    ? "bg-amber-90 text-amber-800 dark:bg-purple-400/19 dark:text-purple-400"
+    : "bg-purple-100 text-purple-700 dark:bg-amber-500/20 dark:text-amber-400";
 
   return (
     <Card>
