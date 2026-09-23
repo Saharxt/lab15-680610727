@@ -12,7 +12,6 @@ import {
 export default function EnrollmentPage() {
   const [enrollments, setEnrollments] = useState(initialEnrollments);
 
-  // การลงทะเบียนของนักศึกษาที่ล็อกอินอยู่เท่านั้น
   const myEnrollments = enrollments.filter(
     (e) => e.studentId === CURRENT_STUDENT_ID,
   );
@@ -20,7 +19,6 @@ export default function EnrollmentPage() {
   const findEnrollment = (courseId: string) =>
     myEnrollments.find((e) => e.courseId === courseId);
 
-  // วิชาที่ยังไม่ได้ลงทะเบียน — ส่งให้ Select ในฟอร์ม
   const availableCourses = courses.filter(
     (course) => !findEnrollment(course.courseId),
   );

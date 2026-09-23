@@ -27,7 +27,6 @@ export default function RootLayout() {
           <Outlet />
         </main>
 
-        {/* ข้อ 4: แก้เป็นชื่อ-นามสกุลจริงของตัวเอง */}
         <footer className="border-t p-4 text-center text-xs text-muted-foreground">
           จัดทำโดย สหรัฐ อภิรัตน์มนตรี รหัสนักศึกษา 680610727
         </footer>

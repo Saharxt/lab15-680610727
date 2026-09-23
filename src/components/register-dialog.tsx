@@ -23,13 +23,11 @@ import {
 } from "@/components/ui/select";
 
 type RegisterDialogProps = {
-  /** เฉพาะวิชาที่ยังไม่ได้ลงทะเบียน */
   availableCourses: Course[];
   student: Student;
   onEnroll: (courseId: string, enrolledAt: string) => void;
 };
 
-// เวลาปัจจุบันในรูปแบบที่ input type="time" ต้องการ เช่น "14:15"
 function currentTimeValue() {
   const now = new Date();
   const hh = String(now.getHours()).padStart(2, "0");
@@ -37,7 +35,6 @@ function currentTimeValue() {
   return `${hh}:${mm}`;
 }
 
-// รวมวันที่วันนี้กับเวลาที่เลือก ให้เป็น ISO 8601 เช่น "2026-09-21T14:15:00"
 function toIsoDateTime(time: string) {
   const now = new Date();
   const yyyy = now.getFullYear();
@@ -57,7 +54,6 @@ export function RegisterDialog({
 
   const selectedCourse = availableCourses.find((c) => c.courseId === courseId);
 
-  // เปิดฟอร์มใหม่ทุกครั้งให้เคลียร์ค่าเดิม และตั้งเวลาเป็นเวลาปัจจุบัน
   function handleOpenChange(nextOpen: boolean) {
     if (nextOpen) {
       setCourseId("");
